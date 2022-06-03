@@ -15,9 +15,9 @@
 <section class="section pt-5 pb-0">
   <div class="container">
     <div class="row">
-      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "goodread") }}
-      {{ range $paginator.Pages }}
-      <div class="col-md-4 mb-4">
+      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "goodread") 8 }}
+      {{ range (.Paginator 8).Pages }}
+      <div class="col-md-3 mb-4">
         <article class="card">
           {{ if .Params.Image }}
           <img src="{{ .Params.Image | absURL }}" class="card-img-top" alt="{{ .Title | markdownify }}">
@@ -36,6 +36,7 @@
               {{ end }}
             </div>
             <p class="card-text">{{ .Summary }}</p>
+            <a href="{{ .Params.Visit }}" target="_blank" class="btn btn-outline-primary">visit</a>
             <a href="{{ .Permalink }}" class="btn btn-outline-primary">read more</a>
           </div>
         </article>
