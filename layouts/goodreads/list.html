@@ -28,9 +28,9 @@
               class="text-primary">{{ . | title | humanize }}</a>
             {{ end }}
             <a href="{{ .Permalink }}" class="h5 d-block my-3">{{ .Title | markdownify }}</a>
-            <p class="card-text">{{ .Summary }}</p>
+            <!-- <p class="card-text">{{ .Summary }}</p> -->
             <a href="{{ .Params.Visit }}" target="_blank" class="btn btn-outline-primary">visit</a>
-            <a href="{{ .Permalink }}" class="btn btn-outline-primary">read more</a>
+            <!-- <a href="{{ .Permalink }}" class="btn btn-outline-primary">read more</a> -->
           </div>
         </article>
       </div>
